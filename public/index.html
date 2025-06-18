@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script src="https://js.stripe.com/basil/stripe.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./frontend_index.js" defer></script>
+    <title>Stripe Store</title>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="max-w-2xl mx-auto py-12 px-6">
+
+      <h1 class="text-3xl font-bold mb-8 text-center">
+        My Stripe Store
+      </h1>
+
+      <!-- Product Section -->
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
+
+        <!-- Product 1 -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-semibold mb-2">Product A</h2>
+          <p class="mb-4">A cool product for $10.00</p>
+          <input
+            id="qty_prod_A"
+            type="number"
+            min="1"
+            value="1"
+            class="border p-1 w-16 mb-2"
+          />
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
+            onclick="addToCart('prod_A', 'Product A', 1000)"
+          >
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-semibold mb-2">Product B</h2>
+          <p class="mb-4">An even cooler product for $20.00</p>
+          <input
+            id="qty_prod_B"
+            type="number"
+            min="1"
+            value="1"
+            class="border p-1 w-16 mb-2"
+          />
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
+            onclick="addToCart('prod_B', 'Product B', 2000)"
+          >
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="bg-white rounded-lg shadow p-6 mt-10">
+        <h2 class="text-xl font-bold mb-4">Cart Summary</h2>
+        <ul id="cartItems" class="mb-4"></ul>
+        <p class="font-semibold mb-4">Total: $<span id="cartTotal">0.00</span></p>
+        <button 
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onclick="checkout()"
+        >
+          Checkout
+        </button>
+      </div>
+
+    </div>
+  </body>
+</html>
