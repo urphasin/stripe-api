@@ -102,4 +102,4 @@ Built with:
 
 ## 📜 License
 
-MIT License. Use this freely and make it better!
+This project is licensed under the [MIT License](./LICENSE).
