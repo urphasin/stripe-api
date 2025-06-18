@@ -12,7 +12,7 @@ const app = express();
 const stripe = Stripe(process.env.test_secret_key)
 
 app.use(cors({
-  origin: "https://stripe-api-theta.vercel.app/",
+  origin: "https://stripe-api-theta.vercel.app",
   credentials: true,
 }));
 app.use(express.static('public'))
