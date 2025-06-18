@@ -63,8 +63,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: 'http://localhost:4242/success.html',
-      cancel_url: 'http://localhost:4242/cancel.html',
+      success_url: 'https://stripe-4z4io9sjm-otito-amugas-projects.vercel.app/success.html',
+      cancel_url: 'https://stripe-4z4io9sjm-otito-amugas-projects.vercel.app/cancel.html',
     });
 
     res.json({ url: session.url });
