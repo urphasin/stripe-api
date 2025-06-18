@@ -48,7 +48,7 @@ async function checkout() {
 
   try {
     const res = await fetch(
-      "http://localhost:4242/create-checkout-session",
+      "https://stripe-api-zk62.onrender.com/create-checkout-session",
       {
         method: "POST",
         headers: {
