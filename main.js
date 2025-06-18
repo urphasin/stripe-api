@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const Stripe = require('stripe')
+const cors = require("cors");
 const Product = require("./models/Product")
 
 
@@ -10,6 +11,10 @@ dotenv.config()
 const app = express();
 const stripe = Stripe(process.env.test_secret_key)
 
+app.use(cors({
+  origin: "https://stripe-api-theta.vercel.app/",
+  credentials: true,
+}));
 app.use(express.static('public'))
 app.use(express.json())
 
